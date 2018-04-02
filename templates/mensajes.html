@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mensajes</title>
+</head>
+<body>
+
+<div>
+<form method="POST" action="/mensajes">
+	<input type="text" name="contenido">
+	<input type="submit" value="Enviar">
+</form>
+</div>
+<div>
+
+<h3>{{ error }}</h3>
+
+	<table>
+	 <thead>
+	    <tr>
+	       <th>Mensajes</th>
+	    </tr>
+	 </thead>
+	 
+	 <tbody>
+	 	{% if mensajes %}
+		    {% for id in mensajes %}
+		       <tr>
+		          <td>{{ mensajes[id]['contenido'] }} {{ mensajes[id]['timestamp'] }} </td>
+		       </tr>
+		    {% endfor %}
+		{% endif %}
+	 </tbody>
+	</table>
+</div>
+  
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+</head>
+<body>
+
+	{% if session['token'] %}
+		<h2> Bienvenido {{ session['nombre'] }} </h2>
+		<div>
+		<a href="/mensajes"><button>Mensajes</button></a>
+		</div>
+		<div>
+		<a href="/logout"><button>Logout</button></a>
+		</div>
+	{% else %}
+		<h2> Bienvenido anonimo </h2>
+		<div>
+		<a href="/login"><button>Login</button></a>
+		</div>
+		<div>
+		<a href="/registrar"><button>Registrar</button></a>
+		</div>
+	{% endif %}
+
+</body>
+</html>
+
